@@ -4,38 +4,72 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Andrew Peralta | Portfolio</title>
 
-    <title>Andrew Peralta | Game Portfolio</title>
+    <!-- Fonts & Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Fade-in for headings */
+      h3, h4 {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 0.6s forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Back to top button */
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        display: none;
+        background-color: #222;
+        color: white;
+        border: none;
+        outline: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        transition: opacity 0.3s ease;
+      }
+
+      #backToTop:hover {
+        background-color: #555;
+      }
+    </style>
   </head>
 
   <body>
-
     <div class="container content-container-outer">
 
+      <!-- NAVBAR -->
       <nav class="navbar navbar-default center-block">
-        <div class="nav-container container-fluid nav-content ">
+        <div class="nav-container container-fluid nav-content">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="https://andrewperalta.github.io">ANDREW PERALTA</a>
-             <a class="navbar-brand center-block" id="occupation">MBA, Game Designer</a>
-           </div>
+            <a class="navbar-brand center-block" id="occupation">MBA, Game Designer</a>
+          </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.html"><span class="material-icons">home</span>Portfolio</a></li>
+              <li class="active"><a href="index.html"><span class="material-icons">home</span>Portfolio</a></li>
               <li><a href="highlighted.html"><span class="material-icons">stars</span>Highlighted Work</a></li>
               <li><a href="https://github.com/andrewperalta/andrewperalta.github.io/raw/master/AndrewPeralta2025bCV.pdf" target="_blank"><span class="material-icons">assignment_ind</span>Curriculum Vitae</a></li>
               <li><a><span class="material-icons">mail_outline</span>pauloandrewperalta@gmail.com</a></li>
@@ -45,639 +79,112 @@
         </div>
       </nav>
 
-      <!-- </br> -->
+      <!-- CONTENT -->
       <div class="content-container container-fluid">
         <div class="content-container-inner col-sm-10 col-sm-offset-1 container row">
+
+          <!-- ABOUT -->
           <div class="about col-sm-12 col-md-12">
             <h3>A B O U T</h3>
             <hr>
-
             <p>
-              I’m <strong>Andrew Peralta</strong>, an MBA-trained <strong>Senior Game Designer</strong> with a background in software development and a deep focus on user experience. 
-              Currently, I lead live-ops and system design for <strong>Sniper Fury</strong> at <strong>Gameloft Hanoi</strong>—driving engagement, retention, and revenue growth through 
-              feature design, progression systems, and data-driven iteration.
+              I’m <strong>Andrew Peralta</strong>, an MBA-trained <strong>Senior Game Designer</strong> with a background in software development and a deep focus on user experience.
+              Currently, I lead live-ops and systems design for <strong>Sniper Fury</strong> at <strong>Gameloft Hanoi</strong>—driving engagement, retention, and revenue growth through feature design, progression systems, and data-driven iteration.
             </p>
-
             <p>
-              Over the years, I’ve shipped multiple titles across casual, mid-core, and casino genres, combining player psychology, F2P economy design, and UX strategy to deliver
-              sustainable live games. I’m passionate about how systems, events, and content loops can tell stories, motivate players, and grow communities.
+              Over the years, I’ve shipped multiple titles across casual, mid-core, and casino genres, combining player psychology, F2P economy design, and UX strategy to deliver sustainable live games.
+              I’m passionate about how systems, events, and content loops can tell stories, motivate players, and grow communities.
             </p>
-
             <p>
               Guided by the values of <em>excellence</em>, <em>integrity</em>, <em>grit</em>, and <em>empathy</em>—I approach every design with both creative curiosity and business awareness.
             </p>
-
             <p class="text-muted"><small>Last updated: October 2025</small></p>
             <br>
           </div>
 
           <!-- SKILLS -->
           <div class="games-container col-sm-12 row">
-            <h3>S K I L L S</h3>
-            <hr><br>
+            <h3>S K I L L S</h3><hr><br>
 
             <div class="col-sm-12">
-              <div class="col-sm-3 col-md-3" id="skillName">Game Systems & Economy Design</div>
-              <div class="col-sm-9 col-md-9">
-                <div class="progress" style="width: 100%;">
-                  <div class="progress-bar" role="progressbar" style="width: 95%;"></div>
-                  <strong>Expert</strong>
-                </div>
+              <div class="col-sm-3" id="skillName">Game Systems & Economy Design</div>
+              <div class="col-sm-9">
                 <p class="skillDesc">Designing currencies, sinks, rewards, and balance for sustained player satisfaction and business health.</p>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <div class="col-sm-3 col-md-3" id="skillName">Live Operations & Events</div>
-              <div class="col-sm-9 col-md-9">
-                <div class="progress" style="width: 100%;">
-                  <div class="progress-bar" role="progressbar" style="width: 95%;"></div>
-                  <strong>Expert</strong>
-                </div>
+              <div class="col-sm-3" id="skillName">Live Operations & Events</div>
+              <div class="col-sm-9">
                 <p class="skillDesc">Conceptualizing and balancing recurring events, seasonal content, and monetization loops that boost engagement.</p>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <div class="col-sm-3 col-md-3" id="skillName">Feature & UX Design</div>
-              <div class="col-sm-9 col-md-9">
-                <div class="progress" style="width: 100%;">
-                  <div class="progress-bar" role="progressbar" style="width: 90%;"></div>
-                  <strong>Advanced</strong>
-                </div>
+              <div class="col-sm-3" id="skillName">Feature & UX Design</div>
+              <div class="col-sm-9">
                 <p class="skillDesc">Transforming player and stakeholder needs into elegant, intuitive features supported by clear documentation.</p>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <div class="col-sm-3 col-md-3" id="skillName">Data-Driven Design</div>
-              <div class="col-sm-9 col-md-9">
-                <div class="progress" style="width: 100%;">
-                  <div class="progress-bar" role="progressbar" style="width: 85%;"></div>
-                  <strong>Advanced</strong>
-                </div>
+              <div class="col-sm-3" id="skillName">Data-Driven Design</div>
+              <div class="col-sm-9">
                 <p class="skillDesc">Using analytics, player feedback, and A/B testing to guide iteration and validate design hypotheses.</p>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <div class="col-sm-3 col-md-3" id="skillName">Leadership & Mentorship</div>
-              <div class="col-sm-9 col-md-9">
-                <div class="progress" style="width: 100%;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
-                  <strong>Strong</strong>
-                </div>
+              <div class="col-sm-3" id="skillName">Leadership & Mentorship</div>
+              <div class="col-sm-9">
                 <p class="skillDesc">Mentoring junior designers, aligning cross-disciplinary teams, and maintaining design clarity across production.</p>
               </div>
             </div>
           </div>
 
-          <!-- GAMES -->
-
-          <!-- Battle Spins -->
-          <div class="games-container col-sm-12 row">
-            <h3>G A M E S</h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                    <div id="bs-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oYSPAnMLN30"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/bs/bs1.png" class="img-fluid center-block bs-height">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/bs/bs2.png" class="img-fluid center-block bs-height">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/bs/bs3.png" class="img-fluid center-block bs-height">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/bs/bs4.png" class="img-fluid center-block bs-height">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/bs/bs5.png" class="img-fluid center-block bs-height">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#bs-carousel">
-                                  <img src="res/bs/bsyt.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#bs-carousel">
-                                  <img src="res/bs/bs1.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#bs-carousel">
-                                  <img src="res/bs/bs2.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#bs-carousel">
-                                  <img src="res/bs/bs3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#bs-carousel">
-                                  <img src="res/bs/bs4.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#bs-carousel">
-                                  <img src="res/bs/bs5.png" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Battle Spins</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>Android, IOS</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Version 1.18</p>
-              <p class="gameDetail"><strong class="gameInfo">Role in Development: </strong>Game Designer</p>
-              <p>Battle Spins is the latest social game title from <a href="https://www.anino.co/">Anino</a>. It is an improved clone of Coin Master, differentiating via it's own unique features like, Clans (under development). and etc. It is also more generous compared to similar games in the same genre.</p>
-              <ul>
-                <li>100,000+ downloads on Google Play</li>
-                <li>4.7☆ rating from 2,000+ reviews</li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.anino.battleslots&hl=en&gl=US">Download Battle Spins on Google Play!</a></li>
-              </ul>
-              <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
-          </div>
-
-          <!-- Double Win Vegas -->
-          <div class="games-container col-sm-12 row">
-            <h3></h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                    <div id="dwv-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7XoIskaCBCM"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/dwv/dwv1.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/dwv/dwv2.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/dwv/dwv3.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/dwv/dwv4.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/dwv/dwv5.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="6">
-                              <img src="res/dwv/dwv6.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="7">
-                              <img src="res/dwv/dwv7.png" class="img-fluid">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwvyt.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv1.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv2.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv4.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv5.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-6" data-slide-to="6" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv6.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-7" data-slide-to="7" data-target="#dwv-carousel">
-                                  <img src="res/dwv/dwv7.png" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Double Win Vegas Slots</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>Android, IOS, Amazon</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Version 3.24</p>
-              <p class="gameDetail"><strong class="gameInfo">Role in Development: </strong>Game Designer</p>
-              <p>Double Win Vegas is the most popular social slot casino title from <a href="https://www.anino.co/">Anino</a>. It boasts of 60+ fun slot machines and spotlights different social features including clubs tournaments and leaderboard. Casino table games like black jack and roulette can also be played in Double Win Vegas.</p>
-              <ul>
-                <li>1,000,000+ downloads on Google Play</li>
-                <li>4.3☆ rating from 21,000+ reviews</li>
-                <li><a href="https://play.google.com/store/apps/details?id=ppl.unity.cubeslots&hl=en">Download Double Win Vegas Slots on Google Play!</a></li>
-              </ul>
-              <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
-          </div>
-
-          <!-- Exotic Slots -->
-          <div class="games-container col-sm-12 row">
-            <h3></h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                    <div id="es-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ve5pMy0DT8s"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/es/es1.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/es/es2.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/es/es3.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/es/es4.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/es/es5.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="6">
-                              <img src="res/es/es6.png" class="img-fluid">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#es-carousel">
-                                  <img src="res/es/esyt.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#es-carousel">
-                                  <img src="res/es/es1.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#es-carousel">
-                                  <img src="res/es/es2.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#es-carousel">
-                                  <img src="res/es/es3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#es-carousel">
-                                  <img src="res/es/es4.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#es-carousel">
-                                  <img src="res/es/es5.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-6" data-slide-to="6" data-target="#es-carousel">
-                                  <img src="res/es/es6.png" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Exotic Slots</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>Android, IOS</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Version 2.20</p>
-              <p class="gameDetail"><strong class="gameInfo">Role in Development: </strong>Game Designer</p>
-              <p>Ever wondered what would happen if you combined  car races and slot machines with live models? If you love slots, then get ready for a BRAND NEW experience! Welcome to EXOTIC SLOTS, where you can feel the rush of betting on your lucky slot machine or model to win!</p>
-              <ul>
-                <li>Developed by Anino for <a href="http://www.spiralwrks.com/">Spiralworks Technologies</a></li>
-                <li>4.4☆ rating on Google Play</li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.racing.reels&hl=en&gl=US">Download Exotic Slots on Google Play!</a></li>
-              </ul>
-              <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
-          </div>
-
-          <!-- Shrink Runner 42 -->
-          <div class="games-container col-sm-12 row">
-            <h3></h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                    <div id="sr42-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/s120maaIkD0"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/sr42/sr1.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/sr42/sr2.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/sr42/sr3.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/sr42/sr4.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/sr42/sr5.png" class="img-fluid">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sryt.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sr1.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sr2.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sr3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sr4.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#sr42-carousel">
-                                  <img src="res/sr42/sr5.png" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Shrink Runner 42</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>Web</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Finished</p>
-              <p>Shrink Runner 42 is a casual 3D game that involves physics, quick wits, and dexterity. The player controls the sphere and needs to collect powerups which makes up for the score and increases the play area. As the game go by, the area slowly shrinks and obstacles appear between the sphere and the powerups. It's game over when the sphere falls from the area or the area disappears completely.</p>
-              <ul>
-                <li>I made this game as a compo entry for <a href="https://ldjam.com/events/ludum-dare/42/">Ludum Dare 42</a></li>
-                <li><a href="https://ldjam.com/about">Ludum Dare game jam</a> is a famous online game jam held twice a year.</li>
-                <li>Theme for Ludum Dare 42 is <i>Running out of Space</i>.</li>
-                <li>Shrink Runner 42 ranked 302nd out of 3068 in the theme division... not bad for my 1st game jam? xD</li>
-                <li>You can play Shrink Runner 42 online: <a href="https://whoisninja.itch.io/shrink-runner-42">PLAY ONLINE!</a></li>
-              </ul>
-              <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
-          </div>
-
-          <!-- Zen Driving -->
-          <div class="games-container col-sm-12 row">
-            <h3></h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                  	<div id="zen-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZQyBZHjm4xA"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/zd/zen1.PNG" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/zd/zen2.PNG" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/zd/zen3.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/zd/zen4.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/zd/zen5.png" class="img-fluid">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#zen-carousel">
-                                  <img src="res/zd/yt.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#zen-carousel">
-                                  <img src="res/zd/zen1.PNG" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#zen-carousel">
-                                  <img src="res/zd/zen2.PNG" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#zen-carousel">
-                                  <img src="res/zd/zen3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#zen-carousel">
-                                  <img src="res/zd/zen4.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#zen-carousel">
-                                  <img src="res/zd/zen5.png" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Zen Driving</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>PC, Mobile</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Under Development</p>
-              <p>Zen Driving is a casual game with a twist. You drive through a relaxing terrain with an amazing background music but you also have to dodge incoming traffic and accumulate points by getting gas containers.</p>
-              <ul>
-              	<li>The game's 3D objects was made with free assets from the asset store.</li>
-              	<li>The Main Menu design was originally made by friend, <a href="http://www.facebook.com/popkistudio">Marco Francisco</a></li>
-              </ul>
-          	  <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
-          </div>
-
-          <!-- Dodge Cube Xtreme -->
-          <div class="games-container col-sm-12 row">
-            <h3></h3><hr></br>
-            <div class="col-sm-12 col-md-12 col-lg-7">
-              <div class="row">
-                <div class="col-lg-12" id="slider">
-                  	<div id="dcx-carousel" class="carousel slide">
-                      <!-- main slider carousel items -->
-                      <div class="carousel-inner">
-                          <div class="active item carousel-item" data-slide-number="0">
-                              <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UsxkL8BbuDI"></iframe>
-                              </div>
-                          </div>
-                          <div class="item carousel-item" data-slide-number="1">
-                              <img src="res/dcx/DCX - Title Menu.jpg" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="2">
-                              <img src="res/dcx/DCX - Gameplay 1.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="3">
-                              <img src="res/dcx/DCX - Gameplay 2.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="4">
-                              <img src="res/dcx/DCX - Gameplay 3.png" class="img-fluid">
-                          </div>
-                          <div class="item carousel-item" data-slide-number="5">
-                              <img src="res/dcx/DCX - Credits.jpg" class="img-fluid">
-                          </div>
-
-                      </div>
-                      <!-- main slider carousel nav controls -->
-
-                      <ul class="carousel-indicators list-inline">
-                          <li class="list-inline-item active">
-                              <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#dcx-carousel">
-                                  <img src="res/dcx/yt.jpg" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-1" data-slide-to="1" data-target="#dcx-carousel">
-                                  <img src="res/dcx/DCX - Title Menu.jpg" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-2" data-slide-to="2" data-target="#dcx-carousel">
-                                  <img src="res/dcx/DCX - Gameplay 1.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-3" data-slide-to="3" data-target="#dcx-carousel">
-                                  <img src="res/dcx/DCX - Gameplay 2.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-4" data-slide-to="4" data-target="#dcx-carousel">
-                                  <img src="res/dcx/DCX - Gameplay 3.png" class="img-fluid">
-                              </a>
-                          </li>
-                          <li class="list-inline-item">
-                              <a id="carousel-selector-5" data-slide-to="5" data-target="#dcx-carousel">
-                                  <img src="res/dcx/DCX - Credits.jpg" class="img-fluid">
-                              </a>
-                          </li>
-                      </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-5">
-              <h2>Dodge Cube Xtreme</h2>
-              <p class="gameDetail"><strong class="gameInfo">Technology: </strong>Unity, C#</p>
-              <p class="gameDetail"><strong class="gameInfo">Platform: </strong>PC</p>
-              <p class="gameDetail"><strong class="gameInfo">Status: </strong>Version 1.3</p>
-              <p>Dodge Cube Xtreme is an action and adventure 3D runner game. It involves physics and a lot of player dexterity and memory.</p>
-              <ul>
-              	<li>I made this game to learn Unity and Game Development.</li>
-                <li>The game is inspired and has deviated from the cube game concept of <a href="https://www.linkedin.com/in/asbjoernthirslund/?locale=en_US" target="_blank">Asbj&Oslash;rn Thirslund</a>.</li>
-                <li>The game's music was originally composed using <a href="http://boscaceoil.net" target="_blank">Bosca Ceoil</a></li>
-              </ul>
-              <!--<a class="extLinks" href="https://github.com/jvincealo/Games/tree/master/Quarantine">Source Code</a>-->
-            </div>
+          <div class="col-sm-12 text-center">
+            <br><hr>
+            <p><em>Explore my portfolio of shipped projects and design highlights below.</em></p>
+            <a href="highlighted.html" class="btn btn-default btn-lg">
+              <span class="material-icons">stars</span> View Highlighted Work
+            </a>
+            <br><br>
           </div>
 
         </div>
-        <!-- footer -->
-        <div class="col-sm-12 footer-container">
-          &copy; 2017 Andrew Peralta
+
+        <!-- FOOTER -->
+        <div class="col-sm-12 footer-container text-center">
+          &copy; 2025 Andrew Peralta
         </div>
       </div>
- 
-      </div>  
-      <!-- /container -->
 
+      <!-- BACK TO TOP -->
+      <button onclick="topFunction()" id="backToTop" title="Go to top">
+        <span class="material-icons">arrow_upward</span>
+      </button>
+
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/home.js"></script>
+    <script>
+      // Show/hide back-to-top button
+      window.onscroll = function() {
+        const btn = document.getElementById("backToTop");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          btn.style.display = "block";
+          btn.style.opacity = "1";
+        } else {
+          btn.style.opacity = "0";
+          setTimeout(() => { btn.style.display = "none"; }, 300);
+        }
+      };
+      // Scroll to top
+      function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
