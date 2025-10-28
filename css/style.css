@@ -1,3 +1,12 @@
+:root {
+  /* Shared responsive height baseline for all carousels */
+  --carousel-height-desktop: 51.25vh;
+  --carousel-height-tablet: 40vh;
+  --carousel-height-mobile: 30vh;
+}
+
+
+
 html {
 	height: 100%;
 	width: 100%;
@@ -239,3 +248,127 @@ hr {
 	max-height: 80px;
 	max-width: 80px;
 }
+
+:root{
+  --bs-min-h: 140px;
+  --bs-max-h: 320px;
+  --bs-vh-ratio: 28vh;
+}
+
+/* === Battle Spins responsive fix with breakpoints === */
+#bs-carousel .carousel-inner .item img.bs-height {
+  height: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* === Battle Spins responsive fix (auto follows other carousels) === */
+#bs-carousel .carousel-inner .item img.bs-height {
+  height: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  #bs-carousel .carousel-inner .item img.bs-height {
+    max-height: var(--carousel-height-desktop) !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  #bs-carousel .carousel-inner .item img.bs-height {
+    max-height: var(--carousel-height-tablet) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #bs-carousel .carousel-inner .item img.bs-height {
+    max-height: var(--carousel-height-mobile) !important;
+  }
+}
+
+/* All carousels now share the same height scaling */
+.carousel .carousel-inner .item img {
+  max-height: var(--carousel-height-desktop);
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel .carousel-inner .item img {
+    max-height: var(--carousel-height-tablet);
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel .carousel-inner .item img {
+    max-height: var(--carousel-height-mobile);
+  }
+}
+
+/* === UNIVERSAL CAROUSEL RESPONSIVE HEIGHT SYNC === */
+
+/* Applies to all carousels (images + video iframes) */
+.carousel .carousel-inner .item img,
+.carousel .carousel-inner .item .embed-responsive.embed-responsive-16by9,
+.carousel .carousel-inner .item iframe.embed-responsive-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain !important;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .carousel .carousel-inner .item img,
+  .carousel .carousel-inner .item .embed-responsive-16by9,
+  .carousel .carousel-inner .item iframe.embed-responsive-item {
+    max-height: var(--carousel-height-desktop) !important;
+    height: var(--carousel-height-desktop) !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel .carousel-inner .item img,
+  .carousel .carousel-inner .item .embed-responsive-16by9,
+  .carousel .carousel-inner .item iframe.embed-responsive-item {
+    max-height: var(--carousel-height-tablet) !important;
+    height: var(--carousel-height-tablet) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .carousel .carousel-inner .item img,
+  .carousel .carousel-inner .item .embed-responsive-16by9,
+  .carousel .carousel-inner .item iframe.embed-responsive-item {
+    max-height: var(--carousel-height-mobile) !important;
+    height: var(--carousel-height-mobile) !important;
+  }
+}
+
+/* Override Bootstrap’s padding-bottom ratio for embeds */
+.carousel .carousel-inner .item .embed-responsive-16by9 {
+  padding-bottom: 0 !important;
+  position: relative;
+}
+.carousel .carousel-inner .item iframe.embed-responsive-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100% !important;
+}
+
