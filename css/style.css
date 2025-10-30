@@ -372,3 +372,358 @@ hr {
   height: 100% !important;
 }
 
+/* === PROJECT HERO MODULE (Corrected: true spatial alignment) === */
+.project-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background: var(--hero-bg, #222) center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* default: center HUD */
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* left / right hero alignment (affects HUD position within the banner) */
+.project-hero.align-left {
+  justify-content: flex-start;
+  padding-left: 6%;
+}
+
+.project-hero.align-right {
+  justify-content: flex-end;
+  padding-right: 6%;
+}
+
+.project-hero.align-center {
+  justify-content: center;
+}
+
+/* overlay darkener */
+.project-hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* lighter so banner shows more */
+  z-index: 1;
+}
+
+/* HUD wrapper (margin:0 so side alignment works) */
+.project-hero .hero-hud {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 850px;
+  width: 90%;
+  margin: 0; /* important: do NOT use auto here if you want left/right placement */
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+/* internal text alignment */
+.project-hero.align-left .hero-hud {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.project-hero.align-right .hero-hud {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.project-hero.align-center .hero-hud {
+  align-items: center;
+  text-align: center;
+}
+
+/* mobile fallback */
+@media (max-width: 768px) {
+  .project-hero {
+    min-height: 420px;
+  }
+  .project-hero.align-left,
+  .project-hero.align-right {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .project-hero.align-left .hero-hud,
+  .project-hero.align-right .hero-hud {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* === HERO TITLE IMAGE === */
+.hero-title-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px; /* centers image & adds spacing below */
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.project-hero.align-left .hero-title-img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.project-hero.align-right .hero-title-img {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+
+/* HUD BLOCKS */
+.hud-block {
+  background: rgba(245,245,245,0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+/* === HUD COMMAND BAR & PLAY BUTTONS (consistent with hud-block) === */
+.hud-command-bar {
+  display: flex;
+  gap: 0;
+  align-items: center;            /* vertically center content in each column */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(245,245,245,0.08); /* match .hud-block translucent tone */
+  border: 1px solid rgba(255,255,255,0.15); /* match hud-block border */
+  border-radius: 12px;
+  padding: 18px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35); /* match hud-block shadow */
+}
+
+/* each column inside the command bar: center text and vertically center content */
+.hud-command-bar .command-col {
+  flex: 1 1 0;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center of text inside each column */
+  text-align: center;
+}
+
+/* divider between columns */
+.hud-command-bar .command-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  margin: 0 8px;
+  border-radius: 1px;
+  align-self: stretch;
+}
+
+/* keep headings clean — inherit typography from base */
+.hud-command-bar h4 { margin: 0 0 8px; }
+
+/* FEATURES LIST with icons
+   - Keep text styles inherited; left-align list content inside the feature tile.
+*/
+.features-title { margin: 0 0 10px; font-weight: 700; text-align: left; }
+.hero-features { text-align: left; }        /* left-align content inside the tile */
+.features-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.features-list li { display: flex; align-items: center; gap: 10px; }
+.feat-icon { flex: 0 0 18px; }
+
+/* Play section: keep header and buttons visually separate */
+.play-section { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.play-header {
+  background: rgba(255,255,255,0.04);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+/* platform buttons — colored SVGs inside neutral UI buttons */
+.platform-buttons { display: flex; gap: 12px; align-items: center; }
+.platform-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:40px;
+  border-radius:10px;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.08);
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.02);
+}
+.platform-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+}
+
+.platform-btn svg { 
+  width:20px; 
+  height:20px; 
+  display:block; 
+}
+
+/* --- New addition: handle image logos --- */
+.platform-btn img {
+  width: 22px;
+  height: auto;
+  max-height: 22px;
+  object-fit: contain;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.45));
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.platform-btn:hover img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Responsive collapse */
+@media (max-width: 900px) {
+  .hud-command-bar { flex-direction: column; gap: 12px; padding: 14px; max-width: 720px; }
+  .hud-command-bar .command-divider { display: none; }
+  .hud-command-bar .command-col { padding: 6px 4px; align-items: center; text-align: center; }
+}
+
+
+
+/* Modular: hide empty blocks */
+.hud-block:empty {
+  display: none;
+}
+
+/* Typography consistency */
+.hero-title h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero-title h4 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.25em;
+  margin: 6px 0 0;
+  color: #ddd;
+
+}
+
+.hero-desc p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1em;
+  line-height: 1.55;
+  margin: 0;
+  color: #eee;
+}
+
+.hero-features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-features li {
+  font-family: 'Montserrat';
+  font-size: 0.95em;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.hero-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hud-btn {
+  background: #800;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.hud-btn:hover {
+  background: #a00;
+}
+
+.hud-btn.outline {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.hud-btn.outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .project-hero {
+    min-height: 420px;
+  }
+  .hero-title h1 {
+    font-size: 2em;
+  }
+  .hud-block {
+    padding: 14px 16px;
+  }
+}
+
+/* === HUD ROW (Equal Width Columns) === */
+.hud-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.project-hero.align-left .hud-row {
+  justify-content: flex-start;
+}
+
+.project-hero.align-right .hud-row {
+  justify-content: flex-end;
+}
+
+/* HUD blocks in rows stretch to fill */
+.hud-row .hud-block {
+  flex: 1 1 0;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Keeps text inside centered nicely */
+.hud-row .hud-block h4,
+.hud-row .hud-block p {
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hud-row {
+    flex-direction: column;
+  }
+}
+
