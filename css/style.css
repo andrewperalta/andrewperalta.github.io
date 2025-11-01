@@ -421,6 +421,7 @@ hr {
   margin: 0; /* important: do NOT use auto here if you want left/right placement */
   text-align: center;
   margin-bottom: 6rem;
+  margin-top: 6rem;
 }
 
 /* internal text alignment */
@@ -727,3 +728,281 @@ hr {
   }
 }
 
+/* === MLP Readability Boost === */
+.project-hero.mlp .hero-overlay {
+  background: rgba(0, 0, 0, 0.25); /* darker, improves contrast but keeps color underneath */
+  backdrop-filter: blur(3px);      /* adds a soft diffusion to the confetti/edges */
+}
+
+/* Slightly stronger text clarity */
+.project-hero.mlp .hero-title h1,
+.project-hero.mlp .hero-desc p,
+.project-hero.mlp .hero-features li {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.55); /* more shadow depth for readability */
+}
+
+/* HUD block brightening */
+.project-hero.mlp .hud-block,
+.project-hero.mlp .hud-command-bar {
+  background: rgba(255,255,255,0.16); /* a touch more opaque */
+  border: 1px solid rgba(255,255,255,0.28);
+}
+
+/* Maintain glow but tone down highlight contrast */
+.project-hero.mlp .hero-features li strong {
+  color: #fff; /* keeps strong text crisp without color bleeding */
+}
+
+
+
+/* === Floating scroll hint === */
+.scroll-hint {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  color: #fff;
+  z-index: 50;
+  opacity: 0.9;
+  animation: floatHint 2.2s ease-in-out infinite;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* avoids blocking clicks */
+}
+
+.scroll-hint-icon {
+  animation: bounceHint 1.2s ease-in-out infinite;
+  font-size: 1.2em;
+}
+
+@keyframes bounceHint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes floatHint {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.6; }
+}
+
+/* Hidden state (JS toggled) */
+.scroll-hint.hide {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+/* HERO GALLERY BLOCK */
+/* === Hero Gallery v2.4: Flow-Based Layout (No Absolute Positioning) === */
+.hero-gallery {
+  position: static; /* always in flow, no overlap */
+  width: 90%;
+  margin: 1.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: none;
+  box-shadow: none;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    width 0.4s ease,
+    padding 0.4s ease,
+    margin 0.4s ease;
+}
+
+/* Animation states (keep as-is) */
+.hero-gallery.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-gallery.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Image presentation */
+.hero-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.hero-gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Alignment control still works visually, but now through margins only */
+.hero-gallery.side-left { margin-left: 6%; margin-right: 0; }
+.hero-gallery.side-right { margin-right: 6%; margin-left: 0; }
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .hero-gallery {
+    width: 95%;
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-gallery {
+    width: 100%;
+    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1rem 1.4rem;
+  }
+}
+
+/* === HERO MOBILE/TABLET CENTER + SPACING FIX (Final Polished Version) === */
+@media (max-width: 991px) {
+  .project-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* Added breathing space */
+    padding: 2.5rem 1.5rem; /* vertical | horizontal */
+    box-sizing: border-box;
+  }
+
+  /* HUD always first */
+  .project-hero .hero-hud {
+    order: 1;
+    width: 100%;
+    max-width: 900px;
+
+    /* New spacing and centering refinements */
+    margin: 0 auto 1.75rem auto;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Gallery always second */
+  .project-hero .hero-gallery {
+    order: 2;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  /* Neutralize alignment overrides */
+  .project-hero.align-left,
+  .project-hero.align-right {
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.5rem; /* ensures all alignments share the same padding */
+  }
+
+  /* Reset gallery side variants */
+  .hero-gallery.side-left,
+  .hero-gallery.side-right {
+    margin: 0 auto;
+  }
+
+  /* Ensure consistent centering for internal elements */
+  .hero-hud > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Add slight bottom spacing before next section */
+  .project-hero:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+/* === Achievement Line Inline Fix === */
+/* === Force 10% to stay inline, even if HTML breaks === */
+.features-list li strong {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.features-list li {
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.features-list li:has(strong) {
+  display: inline-block;
+}
+
+/* === APPLAYDU HERO POLISH (v1.2 Darkened Readability Pass) === */
+.project-hero.applaydu .hero-overlay {
+  background: rgba(0, 0, 0, 0.30); /* darker overlay for stronger contrast */
+  backdrop-filter: blur(1.5px);
+}
+
+/* HUD tiles with richer separation and softer highlight */
+.project-hero.applaydu .hud-block,
+.project-hero.applaydu .hud-command-bar {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Text glow — subtle blue-white tint for crispness */
+.project-hero.applaydu .hero-title h1,
+.project-hero.applaydu .hero-desc p,
+.project-hero.applaydu .hero-features li {
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* Gallery hover toned down slightly to fit darker background */
+.project-hero.applaydu .hero-gallery img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Platform buttons — extra punch */
+.project-hero.applaydu .platform-buttons {
+  gap: 18px;
+}
+
+.project-hero.applaydu .platform-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-hero.applaydu .platform-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Applaydu logo pop with soft warm glow */
+.project-hero.applaydu .hero-title-img {
+  filter: drop-shadow(0 4px 8px rgba(255, 180, 80, 0.6));
+}
